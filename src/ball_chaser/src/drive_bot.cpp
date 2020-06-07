@@ -10,7 +10,7 @@ ros::Publisher motor_command_publisher;
 bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser::DriveToTarget::Response& res) {
   // Create a motor_command object of type geometry_msgs::Twist
   geometry_msgs::Twist motor_command;
-  // Set wheel velocities, forward [0.5, 0.0]
+  // Set wheel velocities
   motor_command.linear.x = req.linear_x;
   motor_command.angular.z = req.angular_z;
   // Publish angles to drive the robot

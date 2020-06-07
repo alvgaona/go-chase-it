@@ -1,4 +1,4 @@
-linear_x float64
-linear_y float64
+float64 linear_x
+float64 angular_z
 ---
-msg_feedback string
+string msg_feedback
