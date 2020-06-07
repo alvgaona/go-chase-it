@@ -65,7 +65,7 @@
     </visual>
   </link>
 
-  <link name="left-wheel">
+  <link name="left_wheel">
     <pose>0 0 0 0 0 0</pose>
 
     <inertial>
