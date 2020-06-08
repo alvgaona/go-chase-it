@@ -47,7 +47,7 @@ void process_image_callback(const sensor_msgs::Image img) {
     pixel.b = img.data[i + 2];
 
     if (pixel.is_white()) {
-      x_position += (i % (img.width * 3)) / 3);
+      x_position += (i % (img.width * 3)) / 3;
       count_total++;
     }
   }
