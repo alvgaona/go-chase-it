@@ -4,9 +4,10 @@
 #include "ros/ros.h"
 
 struct Pixel {
-  int r, int g, int b;
+  int r;
+  int g;
+  int b;
 
- public:
   bool is_white() {
     int white = 255;
     return r == white && g == white && b == white;
@@ -42,11 +43,11 @@ void process_image_callback(const sensor_msgs::Image img) {
 
   for (int i = 0; i + 2 < img.data.size(); i++) {
     pixel.r = img.data[i];
-    pixel.b = img.data[i + 1];
-    pixel.g = img.data[i + 2];
+    pixel.g = img.data[i + 1];
+    pixel.b = img.data[i + 2];
 
     if (pixel.is_white()) {
-      x_position += (i % (img.width * 3)) / 3)
+      x_position += (i % (img.width * 3)) / 3);
       count_total++;
     }
   }
