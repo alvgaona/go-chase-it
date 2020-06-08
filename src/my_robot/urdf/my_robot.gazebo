@@ -1,24 +1,28 @@
 <?xml version="1.0"?>
 <robot>
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
-      <updateRate>10</updateRate>
-      <leftJoint>left_wheel_hinge</leftJoint>
-      <rightJoint>right_wheel_hinge</rightJoint>
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>front_left_wheel_hinge</leftFrontJoint>
+      <rightFrontJoint>front_right_wheel_hinge</rightFrontJoint>
+      <leftRearJoint>rear_left_wheel_hinge</leftRearJoint>
+      <rightRearJoint>rear_right_wheel_hinge</rightRearJoint>
       <wheelSeparation>0.4</wheelSeparation>
-      <wheelDiameter>0.2</wheelDiameter>
-      <torque>10</torque>
+      <wheelDiameter>0.28</wheelDiameter>
+      <torque>20</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
       <publishWheelTF>false</publishWheelTF>
       <publishWheelJointState>false</publishWheelJointState>
-      <rosDebugLevel>na</rosDebugLevel>
-      <wheelAcceleration>0</wheelAcceleration>
-      <wheelTorque>5</wheelTorque>
+      <broadcastTF>false</broadcastTF>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.001</covariance_yaw>
       <odometrySource>world</odometrySource>
       <publishTf>1</publishTf>
       <publishOdomTF>true</publishOdomTF>
